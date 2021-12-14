@@ -1,1 +1,8 @@
+---
+- hosts: localhost
+  tasks:
+    - shell: cat /etc/fstab
+      register: result
 
+    - debug:
+        var: result.stdout_lines
